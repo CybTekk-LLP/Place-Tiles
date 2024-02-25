@@ -1,11 +1,11 @@
 // Copyright (c) 2021 8th Wall, Inc.
 /* globals AFRAME */
 
-// Component that places trees where the ground is clicked
+// Component that places tiles where the floor is clicked
 AFRAME.registerComponent("tap-place", {
   init() {
-    const ground = document.getElementById("ground");
-    ground.addEventListener("click", (event) => {
+    const floor = document.getElementById("floor");
+    floor.addEventListener("click", (event) => {
       // Create new entity for the new object
       const newElement = document.createElement("a-entity");
 
@@ -13,17 +13,16 @@ AFRAME.registerComponent("tap-place", {
       const touchPoint = event.detail.intersection.point;
       newElement.setAttribute("position", touchPoint);
 
-      const randomYRotation = Math.random() * 360;
-      newElement.setAttribute("rotation", `0 ${randomYRotation} 0`);
+      newElement.setAttribute("rotation", "117 -55 -27");
 
       newElement.setAttribute("visible", "false");
-      newElement.setAttribute("scale", "0.0001 0.0001 0.0001");
+      newElement.setAttribute("scale", "1 1 1");
 
       newElement.setAttribute("shadow", {
         receive: false,
       });
 
-      newElement.setAttribute("gltf-model", "#treeModel");
+      newElement.setAttribute("gltf-model", "#tileModel");
       this.el.sceneEl.appendChild(newElement);
 
       newElement.addEventListener("model-loaded", () => {
@@ -31,7 +30,7 @@ AFRAME.registerComponent("tap-place", {
         newElement.setAttribute("visible", "true");
         newElement.setAttribute("animation", {
           property: "scale",
-          to: "7 7 7",
+          to: "1.2 1.2 1.2",
           easing: "easeOutElastic",
           dur: 800,
         });
