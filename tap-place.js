@@ -13,7 +13,7 @@ AFRAME.registerComponent("tap-place", {
       const touchPoint = event.detail.intersection.point;
       newElement.setAttribute("position", touchPoint);
 
-      newElement.setAttribute("rotation", "0 90 0");
+      newElement.setAttribute("rotation", "90 0 0");
 
       newElement.setAttribute("visible", "false");
       newElement.setAttribute("scale", "0.4 0.4 0.4");
