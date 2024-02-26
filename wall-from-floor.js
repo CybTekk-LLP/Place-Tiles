@@ -1,6 +1,3 @@
-AFRAME.registerComponent("place-on-wall", placeOnWallComponent);
-AFRAME.registerComponent("wall-from-floor", wallFromFloorComponent);
-
 const wallFromFloorComponent = {
   schema: {
     placed: { default: false },
@@ -114,3 +111,6 @@ const placeOnWallComponent = {
     }
   },
 };
+
+AFRAME.registerComponent("place-on-wall", placeOnWallComponent);
+AFRAME.registerComponent("wall-from-floor", wallFromFloorComponent);
