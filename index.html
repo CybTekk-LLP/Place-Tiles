@@ -19,44 +19,28 @@
     <script async
         src="//apps.8thwall.com/xrweb?appKey=4AHlJqYnByKJbRtGgXRhMSB6cqzsTMNWbda0blpvJTKp02mYcNqVPxclnlcxuomvVpr3dS"></script>
 
-    <script src="tap-place.js"></script>
+    <script src="wall-from-floor.js"></script>
 </head>
 
 <body>
     <!-- We must add the tap-place component to the scene so it has an effect -->
-    <a-scene tap-place landing-page xrextras-loading xrextras-runtime-error renderer="colorManagement:true"
-        xrweb="allowedDevices: any">
-
-        <!-- We can define assets here to be loaded when A-Frame initializes -->
-        <a-assets>
-            <a-asset-item id="tileModel" src="model.glb"></a-asset-item>
-        </a-assets>
+    <a-scene landing-page xrextras-loading xrextras-runtime-error xrweb>
 
         <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
-        <a-camera id="camera" position="0 8 0" raycaster="objects: .cantap" cursor="
-          fuse: false;
-          rayOrigin: mouse;">
-        </a-camera>
+        <a-camera id="camera" position="0 8 8"></a-camera>
 
-        <a-entity light="
-          type: directional;
-          intensity: 0.8;
-          castShadow: true;
-          shadowMapHeight:2048;
-          shadowMapWidth:2048;
-          shadowCameraTop: 20;
-          shadowCameraBottom: -20;
-          shadowCameraRight: 20;
-          shadowCameraLeft: -20;
-          target: #camera" xrextras-attach="target: camera; offset: 8 15 4" position="1 4.3 2.5" shadow>
+        <a-box id="box" wall-from-floor color="white" width="5.5" depth="0.25" height="0.1">
+        </a-box>
+
+        <a-entity light="type: directional; intensity: 0.6;" position="1 4.3 2.5">
         </a-entity>
 
-        <a-light type="ambient" intensity="0.5"></a-light>
+        <a-light type="ambient" intensity="1"></a-light>
 
-        <!-- Adding the cantap class allows the ground to be clicked -->
-        <a-box id="floor" class="cantap" scale="1000 2 1000" position="0 -1 0"
-            material="shader: shadow; transparent: true; opacity: 0.4" shadow>
-        </a-box>
+        <a-entity id="ground" class="cantap" geometry="primitive: box"
+            material="color: #fff; transparent: true; opacity: 0" scale="1000 2 1000" position="0 -1 0">
+        </a-entity>
+
     </a-scene>
 </body>
 
