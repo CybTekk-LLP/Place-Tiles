@@ -16,7 +16,7 @@ AFRAME.registerComponent("tap-place", {
       newElement.setAttribute("rotation", "0 0 0");
 
       newElement.setAttribute("visible", "false");
-      newElement.setAttribute("scale", "1 1 1");
+      newElement.setAttribute("scale", "0.4 0.4 0.4");
 
       newElement.setAttribute("shadow", {
         receive: false,
@@ -30,7 +30,7 @@ AFRAME.registerComponent("tap-place", {
         newElement.setAttribute("visible", "true");
         newElement.setAttribute("animation", {
           property: "scale",
-          to: "1.2 1.2 1.2",
+          to: "0.6 0.6 0.6",
           easing: "easeOutElastic",
           dur: 800,
         });
