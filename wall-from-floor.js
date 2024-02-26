@@ -30,7 +30,7 @@ const wallFromFloorComponent = {
       const frame = document.createElement("a-entity");
       frame.id = "frame";
 
-      frame.setAttribute("gltf-model", "./model.glb");
+      frame.setAttribute("gltf-model", "./tiles.glb");
       frame.object3D.scale.set(3, 3, 3);
       frame.setAttribute("place-on-wall", "");
       scene.appendChild(frame);
