@@ -31,7 +31,7 @@ const wallFromFloorComponent = {
       frame.id = "frame";
 
       frame.setAttribute("gltf-model", "./TilesRotated.glb");
-      frame.object3D.scale.set(3, 3, 3);
+      frame.object3D.scale.set(1, 1, 1);
       frame.setAttribute("place-on-wall", "");
       scene.appendChild(frame);
 
